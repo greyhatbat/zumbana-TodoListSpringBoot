@@ -3,6 +3,10 @@
 
 Aplicación ToDoList de la asignatura  Metologias Agiles 2025-A EPN usando Spring Boot y plantillas Thymeleaf.
 
+## Trello
+
+- Enlace: https://trello.com/b/uEVwJX9S/todolist-epn
+
 ## Requisitos
 
 Necesitas tener instalado en tu sistema:
