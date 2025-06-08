@@ -1,4 +1,6 @@
 package madstodolist.service;
+import java.util.List;
+import java.util.ArrayList;
 
 import madstodolist.dto.UsuarioData;
 import madstodolist.model.Usuario;
@@ -72,4 +74,21 @@ public class UsuarioService {
             return modelMapper.map(usuario, UsuarioData.class);
         }
     }
+    
+    
+    @Transactional(readOnly = true)
+    public List<UsuarioData> allUsuarios() {
+        Iterable<Usuario> usuariosBD = usuarioRepository.findAll();
+
+        List<UsuarioData> usuarios = new ArrayList<>();
+        for (Usuario usuario : usuariosBD) {
+            usuarios.add(modelMapper.map(usuario, UsuarioData.class));
+        }
+
+        return usuarios;
+    }
+
+    
 }
+
+
