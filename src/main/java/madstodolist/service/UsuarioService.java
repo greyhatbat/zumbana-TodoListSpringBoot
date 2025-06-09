@@ -1,4 +1,5 @@
 package madstodolist.service;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -38,9 +39,6 @@ public class UsuarioService {
         }
     }
 
-    // Se añade un usuario en la aplicación.
-    // El email y password del usuario deben ser distinto de null
-    // El email no debe estar registrado en la base de datos
     @Transactional
     public UsuarioData registrar(UsuarioData usuario) {
         Optional<Usuario> usuarioBD = usuarioRepository.findByEmail(usuario.getEmail());
@@ -52,6 +50,7 @@ public class UsuarioService {
             throw new UsuarioServiceException("El usuario no tiene password");
         else {
             Usuario usuarioNuevo = modelMapper.map(usuario, Usuario.class);
+            usuarioNuevo.setEsAdmin(usuario.getEsAdmin()); // copia el valor del checkbox
             usuarioNuevo = usuarioRepository.save(usuarioNuevo);
             return modelMapper.map(usuarioNuevo, UsuarioData.class);
         }
@@ -74,8 +73,7 @@ public class UsuarioService {
             return modelMapper.map(usuario, UsuarioData.class);
         }
     }
-    
-    
+
     @Transactional(readOnly = true)
     public List<UsuarioData> allUsuarios() {
         Iterable<Usuario> usuariosBD = usuarioRepository.findAll();
@@ -87,8 +85,19 @@ public class UsuarioService {
 
         return usuarios;
     }
-    
-       
+
+    // ✅ Nuevo método: verificar si ya hay un administrador
+    @Transactional(readOnly = true)
+    public boolean existeAdministrador() {
+        Iterable<Usuario> usuarios = usuarioRepository.findAll();
+        for (Usuario u : usuarios) {
+            if (u.getEsAdmin() != null && u.getEsAdmin()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
 
 
