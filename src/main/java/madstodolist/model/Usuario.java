@@ -13,6 +13,9 @@ import java.util.Set;
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    private Boolean esAdmin = false;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +43,15 @@ public class Usuario implements Serializable {
     }
 
     // Getters y setters atributos básicos
+    
+    public Boolean getEsAdmin() {
+        return esAdmin;
+    }
+
+    public void setEsAdmin(Boolean esAdmin) {
+        this.esAdmin = esAdmin;
+    }
+
 
     public Long getId() {
         return id;

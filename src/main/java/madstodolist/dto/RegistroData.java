@@ -13,6 +13,18 @@ public class RegistroData {
     private String nombre;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date fechaNacimiento;
+    
+    //modificación para hu4
+    private Boolean esAdmin = false;
+
+    public Boolean getEsAdmin() {
+        return esAdmin;
+    }
+
+    public void setEsAdmin(Boolean esAdmin) {
+        this.esAdmin = esAdmin;
+    }
+    //
 
     public String getEmail() {
         return eMail;

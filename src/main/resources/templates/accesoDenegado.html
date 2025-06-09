@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head (titulo='Acceso denegado')"></head>
+
+<body>
+<div th:replace="fragments :: navbar"></div>
+
+<div class="container mt-4">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Acceso no autorizado</h4>
+        <p th:text="${error}">No tienes permisos para acceder a esta página.</p>
+        <hr>
+        <a href="/" class="btn btn-outline-danger">Volver al inicio</a>
+    </div>
+</div>
+
+<div th:replace="fragments :: javascript"></div>
+</body>
+</html>

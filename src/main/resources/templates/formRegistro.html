@@ -38,6 +38,16 @@
                             <input id="fechaNacimiento" class="form-control" name="fechaNacimiento"
                                    placeholder="01-12-2019" th:field="*{fechaNacimiento}"/>
                         </div>
+						
+						
+						<!--NUEVO: Checkbox solo si aún no existe admin -->
+						<div class="form-group" th:if="${!adminYaExiste}">
+						    <label>
+						        <input type="checkbox" name="esAdmin" th:field="*{esAdmin}">
+						        Registrar como administrador
+						    </label>
+						</div>
+						
 
                         <button type="submit" class="btn btn-primary">Registro</button>
                         <a class="btn btn-link" href="/login">Ir a login</a>
