@@ -1,35 +1,33 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zs7YQjvj)
-# Aplicación inicial ToDoList
+# TodoListSpringBoot XP – Álvaro Zumbana
 
-Aplicación ToDoList de la asignatura  Metologias Agiles 2025-A EPN usando Spring Boot y plantillas Thymeleaf.
+Aplicación desarrollada como parte de la **Práctica 2: Aplicación XP en un Proyecto Completo** de la materia **Metodologías Ágiles 2025-A (EPN)**.
 
-## Trello
+Extiende la aplicación base de tareas con funcionalidades adicionales, pruebas automatizadas y control de acceso por roles.
 
-- Enlace: https://trello.com/b/uEVwJX9S/todolist-epn
+---
+
+## Enlaces del proyecto
+
+- Documentación técnica: [`doc/practica3.md`](doc/practica3.md)
+- Trello: [https://trello.com/b/uEVwJX9S/todolist-epn](https://trello.com/b/uEVwJX9S/todolist-epn)
+- GitHub Project: [https://github.com/users/greyhatbat/projects/2](https://github.com/users/greyhatbat/projects/2)
+
+---
 
 ## Requisitos
 
-Necesitas tener instalado en tu sistema:
+- Java 17
+- Maven
 
-- Java 8
+---
 
-## Ejecución
+## ▶️ Ejecución
 
-Puedes ejecutar la aplicación usando el _goal_ `run` del _plugin_ Maven 
+Puedes ejecutar la aplicación usando el _goal_ run del _plugin_ Maven 
 de Spring Boot:
 
-```
-$ ./mvnw spring-boot:run 
-```   
+$ ./mvnw spring-boot:run
 
-También puedes generar un `jar` y ejecutarlo:
-
-```
-$ ./mvnw package
-$ java -jar target/mads-todolist-inicial-0.0.1-SNAPSHOT.jar 
-```
-
-Una vez lanzada la aplicación puedes abrir un navegador y probar la página de inicio:
+Una vez iniciada, abre en tu navegador:
 
 - [http://localhost:8081/login](http://localhost:8081/login)
-# TodoListSpringBoot
