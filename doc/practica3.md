@@ -47,6 +47,15 @@ Para la parte administrativa, se comprobó que solo un usuario con rol adecuado 
 
 Cada historia de usuario está respaldada por al menos una prueba automatizada, lo cual mejora significativamente la confiabilidad del sistema y permite escalar la aplicación con mayor confianza.
 
+### Pruebas destacadas:
+
+- **Login exitoso**: redirige a la lista de tareas del usuario logeado.
+- **Login incorrecto (usuario inexistente)**: muestra mensaje de error.
+- **Login incorrecto (contraseña inválida)**: muestra mensaje de error.
+- **Acceso permitido a `/registrados` por un admin**: carga la lista de usuarios.
+- **Acceso permitido a `/registrados/{id}`** por un admin: muestra datos detallados.
+- **Acceso denegado a `/registrados` por usuario normal**: carga `accesoDenegado.html`.
+
 ---
 
 ##  Explicación de funcionalidades clave
@@ -56,6 +65,14 @@ Una de las funcionalidades más relevantes fue la incorporación del rol de admi
 Otra funcionalidad importante fue el enlace entre usuarios listados y su perfil, lo que mejora la navegabilidad y da al sistema una apariencia más profesional.
 
 Además, se cuidó la experiencia del usuario con retroalimentación clara, como páginas de acceso denegado o mensajes adecuados en casos de error durante el login.
+
+- En `UsuarioService.registrar()`, se añadió la línea `usuarioNuevo.setEsAdmin(usuario.getEsAdmin())` para reflejar el checkbox del formulario.
+- En `LoginController.registroForm()`, se incluyó el atributo `adminYaExiste` para controlar visibilidad del checkbox.
+- En `UsuarioController`, se incluyó verificación de sesión y rol antes de permitir acceder a `/registrados` y `/registrados/{id}`:
+  ```java
+  if (usuario == null || !Boolean.TRUE.equals(usuario.getEsAdmin())) {
+      return "accesoDenegado";
+  }
 
 ---
 
