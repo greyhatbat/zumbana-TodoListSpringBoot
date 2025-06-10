@@ -21,7 +21,7 @@ Extiende la aplicación base de tareas con funcionalidades adicionales, pruebas 
 
 ---
 
-## ▶️ Ejecución
+## Ejecución
 
 Puedes ejecutar la aplicación usando el _goal_ run del _plugin_ Maven 
 de Spring Boot:
@@ -31,3 +31,13 @@ $ ./mvnw spring-boot:run
 Una vez iniciada, abre en tu navegador:
 
 - [http://localhost:8081/login](http://localhost:8081/login)
+
+## Estado del proyecto
+
+Versión entregada: v1.1.0
+
+Historias completadas: HU1 a HU4
+
+Pruebas automatizadas: JUnit + MockMvc
+
+Rama principal: main
