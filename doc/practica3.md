@@ -73,7 +73,11 @@ Además, se cuidó la experiencia del usuario con retroalimentación clara, como
   if (usuario == null || !Boolean.TRUE.equals(usuario.getEsAdmin())) {
       return "accesoDenegado";
   }
-
+   ```
+En la plantilla usuarios.html, los emails se convirtieron en enlaces usando:
+```html
+<a th:href="@{/registrados/{id}(id=${usuario.id})}" th:text="${usuario.email}">email</a>
+```
 ---
 
 ##  Conclusión
